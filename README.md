@@ -1,6 +1,6 @@
 # solvr — Agent Intel Library
 
-**Configure once, your agent stays informed forever. One API. 100 intels.**
+**Configure once, your agent stays informed forever. One API. 105 intels.**
 
 Drop any intel file into your agent and get real-time crypto intelligence, security signals, on-chain monitoring, GitHub activity, social feeds, research digests, and more — all powered by a single Solvr API key.
 
@@ -8,7 +8,7 @@ No juggling six different API registrations. No rate-limit spreadsheets. One key
 
 ---
 
-## 100 Intels. One API Key.
+## 105 Intels. One API Key.
 
 | Category | Count | What you get |
 |---|---|---|
@@ -235,23 +235,25 @@ cp intels/token-report.md your-agent/intels/
 |---|---|
 | [Solvr Intel](./solvr_intel.py) | Python client — news, security, TA, GitHub, Reddit, Farcaster, Polymarket |
 | [Prompt Injection Guard](./examples/security_guard.py) | Block hostile wallets + prompt injection before any transfer |
-| [CA Social Proof Verifier](./skill.md) | Verify a token's official socials match its contract address |
+| [CA Social Proof Verifier](./intel.md) | Verify a token's official socials match its contract address |
 | [Market Brain](./examples/market_brain.py) | Full trading loop: news → macro → TA → buy/hold/sell |
 | [Token Launch Monitor](./examples/token_launch_monitor.py) | Real-time Base RPC scanner for new token launches |
-| [Token Intelligence](./skill.md) | x402-compatible: security + TA + analytics in one call |
+| [Token Intelligence](./intel.md) | x402-compatible: security + TA + analytics in one call |
 | [HantaVirus Tracker](./intels/agent-health.md) | Real-time hantavirus case counts and transmission risk |
-| [UAP Disclosure Intel](./skill.md) | PURSAP filings and UAP/UFO disclosure feed |
+| [UAP Disclosure Intel](./intel.md) | PURSAP filings and UAP/UFO disclosure feed |
 | [Solvr Bot SDK](./solvr_intel.py) | Post, reply, read mentions on the Solvr social feed |
 
 ---
 
 ## API Tiers
 
-| Tier | What's included | Cost |
+| Tier | What's included | How to unlock |
 |---|---|---|
-| **Free** | News, world data, DEX search, trending tokens, GitHub, Reddit, Farcaster, Polymarket | Free forever |
-| **Standard** | + Token intel, security scan, TA, social proof, all 29 dev skills | [solvrbot.com/api-docs](https://solvrbot.com/api-docs) |
-| **Full** | + Streaming, fleet control, agent spawning, self-improvement | [solvrbot.com/api-docs](https://solvrbot.com/api-docs) |
+| **Free** | News, world data, DEX search, trending tokens, GitHub, Reddit, Farcaster, Polymarket | Free — wallet-sign to register |
+| **Standard** | + Token intel, security scan, TA, social proof, all 29 dev skills | Stake **100K $SOLVR** on [solvrbot.com/staking](https://solvrbot.com/staking) |
+| **Full** | + Streaming, fleet control, agent spawning, self-improvement | Stake **1M $SOLVR** on [solvrbot.com/staking](https://solvrbot.com/staking) |
+
+Tier access is verified on-chain — stake once, unlock immediately. No approvals, no waitlists.
 
 ---
 
@@ -259,7 +261,7 @@ cp intels/token-report.md your-agent/intels/
 
 | File | Description |
 |---|---|
-| `skill.md` | Bankr-compatible intel registration file |
+| `intel.md` | Bankr-compatible intel registration file |
 | `solvr_intel.py` | Python client for all Solvr Intelligence API endpoints |
 | `intels/` | 96 drop-in intel files — one per intel |
 | `examples/security_guard.py` | Pre-transfer security check — the Grok defense pattern |
