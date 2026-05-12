@@ -26,51 +26,62 @@ All intel files are in [`intels/`](./intels/). All MIT licensed.
 
 ## Quick Start
 
-### 1. Get an API key (free)
+Free tier endpoints are **keyless** — no registration, no wallet, no approval. Just call and go.
+
+### 1. Use free endpoints immediately (no key)
+
+```python
+import requests
+
+BASE = "https://api.solvrbot.com"
+
+# News — real-time headlines from BBC, Guardian, Al Jazeera, NPR
+news = requests.get(f"{BASE}/api/v1/news", params={"topic": "crypto regulation"}).json()
+
+# GitHub trending
+repos = requests.get(f"{BASE}/api/v1/github/trending", params={"language": "python"}).json()
+
+# Reddit hot posts
+posts = requests.get(f"{BASE}/api/v1/reddit", params={"subreddit": "wallstreetbets"}).json()
+
+# Farcaster trending casts
+casts = requests.get(f"{BASE}/api/v1/farcaster").json()
+
+# Polymarket prediction markets
+markets = requests.get(f"{BASE}/api/v1/polymarket", params={"topic": "crypto"}).json()
+
+# DEX token search
+tokens = requests.get(f"{BASE}/api/v1/dex/search", params={"q": "SOLVR"}).json()
+```
+
+### 2. Unlock standard + full tier (stake $SOLVR)
+
+Standard and full tier endpoints (token intelligence, security scans, TA) require staking $SOLVR on-chain.
 
 ```python
 import time, requests
 from eth_account import Account
 from eth_account.messages import encode_defunct
 
+# One-time registration — links your wallet for tier verification
 wallet = "0xYOUR_WALLET"
 private_key = "0xYOUR_PRIVATE_KEY"
 timestamp = int(time.time())
-
 message = f"Register Solvr agent\nWallet: {wallet}\nTimestamp: {timestamp}"
 sig = Account.sign_message(encode_defunct(text=message), private_key=private_key)
-
-resp = requests.post("https://api.solvrbot.com/api/v1/agent/register", json={
-    "wallet": wallet,
-    "sig": sig.signature.hex(),
-    "timestamp": timestamp,
+resp = requests.post(f"{BASE}/api/v1/agent/register", json={
+    "wallet": wallet, "sig": sig.signature.hex(), "timestamp": timestamp,
 })
+api_key = resp.json()["api_key"]  # store securely
 
-api_key = resp.json()["api_key"]  # store this securely
-```
-
-### 2. Use any skill
-
-```python
-from solvr_intel import SolvrIntel
-
-intel = SolvrIntel(api_key)
-
-news     = intel.news("crypto regulation")         # world news
-scan     = intel.security_scan("0x...")             # token security
-ta       = intel.ta_quick("BTC")                    # technical analysis
-trending = intel.github_trending(language="python") # GitHub trending
-reddit   = intel.reddit("wallstreetbets")           # Reddit hot posts
-casts    = intel.farcaster_trending()               # Farcaster casts
-markets  = intel.polymarket_markets(topic="crypto") # Polymarket predictions
+# Then stake at solvrbot.com/staking — tier activates immediately on-chain
 ```
 
 ### 3. Use an intel file directly
 
-Each `intels/*.md` file is a self-contained intel definition. Drop it into any agent runner that supports structured intel files and it works immediately with your Solvr API key.
+Each `intels/*.md` file is a self-contained intel definition. Drop it into any agent runner that supports structured intel files.
 
 ```bash
-# Clone and use
 git clone https://github.com/solvrbase/solvr
 cp intels/token-report.md your-agent/intels/
 ```
