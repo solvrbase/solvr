@@ -18,9 +18,9 @@ Operator performance scorecard — measure agent fleet effectiveness.
 ## Instructions
 1. Collect fleet performance data from memory logs
 2. Score across 5 dimensions:
-   - Uptime: % time all skills operational
-   - Quality: average skill eval score
-   - Coverage: % of configured skills running
+   - Uptime: % time all intels operational
+   - Quality: average intel eval score
+   - Coverage: % of configured intels running
    - Efficiency: API calls per useful output
    - Value: actionable alerts per week
 3. Generate scorecard with trend vs previous period

@@ -1,5 +1,5 @@
 ---
-name: skill-update-check
+name: intel-update-check
 description: Check for intel updates from the Solvr repository.
 category: meta-agent
 tier: free

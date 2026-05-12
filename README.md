@@ -92,7 +92,7 @@ cp intels/token-report.md your-agent/intels/
 
 16 intels for token intelligence, DeFi monitoring, and market awareness.
 
-| Skill | Tier | Description |
+| Intel | Tier | Description |
 |---|---|---|
 | [token-report](./intels/token-report.md) | Standard | Daily performance report: price, volume, security score, TA verdict |
 | [token-alert](./intels/token-alert.md) | Standard | Trigger alert when token hits price/RSI/risk threshold |
@@ -117,7 +117,7 @@ cp intels/token-report.md your-agent/intels/
 
 18 intels for staying informed on anything that matters to your agent.
 
-| Skill | Tier | Description |
+| Intel | Tier | Description |
 |---|---|---|
 | [digest](./intels/digest.md) | Free | Daily news digest on any topic |
 | [deep-research](./intels/deep-research.md) | Standard | Multi-source deep research report on any subject |
@@ -144,7 +144,7 @@ cp intels/token-report.md your-agent/intels/
 
 29 intels for software development automation and repository intelligence.
 
-| Skill | Tier | Description |
+| Intel | Tier | Description |
 |---|---|---|
 | [github-monitor](./intels/github-monitor.md) | Free | Monitor a GitHub repo for new commits, issues, and releases |
 | [github-trending](./intels/github-trending.md) | Free | Daily GitHub trending repositories digest |
@@ -153,12 +153,12 @@ cp intels/token-report.md your-agent/intels/
 | [pr-review](./intels/pr-review.md) | Standard | AI code review summary for any GitHub PR |
 | [code-health](./intels/code-health.md) | Standard | Repo health score: test coverage, issue velocity, stale branches |
 | [vuln-scanner](./intels/vuln-scanner.md) | Standard | Scan a repo for known vulnerabilities in dependencies |
-| [skill-security-scan](./intels/skill-security-scan.md) | Standard | Security audit of an intel.md file before deployment |
+| [intel-security-scan](./intels/intel-security-scan.md) | Standard | Security audit of an intel.md file before deployment |
 | [changelog](./intels/changelog.md) | Free | Auto-generate changelog from GitHub commits |
 | [auto-merge](./intels/auto-merge.md) | Standard | Auto-merge approved PRs matching safety criteria |
 | [auto-workflow](./intels/auto-workflow.md) | Standard | Trigger GitHub Actions workflow and report result |
 | [autoresearch](./intels/autoresearch.md) | Standard | Automated research loop: search → synthesize → output |
-| [create-skill](./intels/create-skill.md) | Standard | Generate a new intel.md from a natural language description |
+| [create-intel](./intels/create-intel.md) | Standard | Generate a new intel.md from a natural language description |
 | [deploy-prototype](./intels/deploy-prototype.md) | Standard | Deploy a code prototype to a staging environment |
 | [external-feature](./intels/external-feature.md) | Standard | Research and spec an external API feature for your codebase |
 | [fleet-control](./intels/fleet-control.md) | Full | Orchestrate a fleet of agents across tasks |
@@ -170,7 +170,7 @@ cp intels/token-report.md your-agent/intels/
 | [repo-article](./intels/repo-article.md) | Standard | Generate a blog post or announcement from a repo |
 | [repo-pulse](./intels/repo-pulse.md) | Free | Weekly repository activity pulse: stars, forks, contributors |
 | [repo-scanner](./intels/repo-scanner.md) | Standard | Deep scan a repository for quality and security signals |
-| [search-skill](./intels/search-skill.md) | Free | Search the Solvr intel library for relevant intels |
+| [search-intel](./intels/search-intel.md) | Free | Search the Solvr intel library for relevant intels |
 | [spawn-instance](./intels/spawn-instance.md) | Full | Spawn a new agent instance with a given intel set |
 | [vercel-projects](./intels/vercel-projects.md) | Free | List and monitor Vercel deployments and build status |
 | [workflow-security-audit](./intels/workflow-security-audit.md) | Standard | Audit GitHub Actions workflows for security misconfigurations |
@@ -182,7 +182,7 @@ cp intels/token-report.md your-agent/intels/
 
 7 intels for content creation and social monitoring.
 
-| Skill | Tier | Description |
+| Intel | Tier | Description |
 |---|---|---|
 | [agent-buzz](./intels/agent-buzz.md) | Free | Trending agent/AI projects across GitHub, X, and Farcaster |
 | [farcaster-digest](./intels/fargester-digest.md) | Free | Top Farcaster casts digest, optionally filtered by channel |
@@ -198,7 +198,7 @@ cp intels/token-report.md your-agent/intels/
 
 12 intels for personal and team workflow automation.
 
-| Skill | Tier | Description |
+| Intel | Tier | Description |
 |---|---|---|
 | [morning-brief](./intels/morning-brief.md) | Free | Personalized morning briefing: news, markets, calendar |
 | [evening-recap](./intels/evening-recap.md) | Free | End-of-day recap: what happened, what's pending |
@@ -219,19 +219,19 @@ cp intels/token-report.md your-agent/intels/
 
 14 intels for agent self-management, health, and improvement.
 
-| Skill | Tier | Description |
+| Intel | Tier | Description |
 |---|---|---|
 | [cost-report](./intels/cost-report.md) | Standard | API usage and cost report for your agent |
 | [heartbeat](./intels/heartbeat.md) | Free | Periodic heartbeat check — confirm agent is alive and healthy |
 | [reflect](./intels/reflect.md) | Standard | Agent self-reflection: review last N actions, improve behavior |
 | [rss-feed](./intels/rss-feed.md) | Free | Generate and publish an RSS feed from agent output |
 | [self-improve](./intels/self-improve.md) | Full | Autonomous intel improvement from performance data |
-| [skill-evals](./intels/skill-evals.md) | Standard | Run evals on an intel set and score output quality |
-| [skill-health](./intels/skill-health.md) | Free | Check all installed intels for broken endpoints or stale configs |
-| [skill-leaderboard](./intels/skill-leaderboard.md) | Free | Rank installed intels by usage and output quality |
-| [skill-repair](./intels/skill-repair.md) | Standard | Auto-repair a broken intel by testing and updating its config |
-| [skill-update-check](./intels/skill-update-check.md) | Free | Check for newer versions of installed intels |
-| [update-gallery](./intels/update-gallery.md) | Free | Publish updated skill output to a gallery endpoint |
+| [intel-evals](./intels/intel-evals.md) | Standard | Run evals on an intel set and score output quality |
+| [intel-health](./intels/intel-health.md) | Free | Check all installed intels for broken endpoints or stale configs |
+| [intel-leaderboard](./intels/intel-leaderboard.md) | Free | Rank installed intels by usage and output quality |
+| [intel-repair](./intels/intel-repair.md) | Standard | Auto-repair a broken intel by testing and updating its config |
+| [intel-update-check](./intels/intel-update-check.md) | Free | Check for newer versions of installed intels |
+| [update-gallery](./intels/update-gallery.md) | Free | Publish updated intel output to a gallery endpoint |
 | [operator-scorecard](./intels/operator-scorecard.md) | Standard | Weekly operator scorecard: output quality, cost, reliability |
 | [contributor-spotlight](./intels/contributor-spotlight.md) | Free | Highlight top contributors to the intel ecosystem |
 | [agent-health](./intels/agent-health.md) | Standard | Full agent health report: errors, latency, cost, coverage |
@@ -242,7 +242,7 @@ cp intels/token-report.md your-agent/intels/
 
 9 foundational intels — Python client, security patterns, and integrations.
 
-| Skill | Description |
+| Intel | Description |
 |---|---|
 | [Solvr Intel](./solvr_intel.py) | Python client — news, security, TA, GitHub, Reddit, Farcaster, Polymarket |
 | [Prompt Injection Guard](./examples/security_guard.py) | Block hostile wallets + prompt injection before any transfer |
@@ -261,7 +261,7 @@ cp intels/token-report.md your-agent/intels/
 | Tier | What's included | How to unlock |
 |---|---|---|
 | **Free** | News, world data, DEX search, trending tokens, GitHub, Reddit, Farcaster, Polymarket | Free — wallet-sign to register |
-| **Standard** | + Token intel, security scan, TA, social proof, all 29 dev skills | Stake **100K $SOLVR** on [solvrbot.com/staking](https://solvrbot.com/staking) |
+| **Standard** | + Token intel, security scan, TA, social proof, all 29 dev intels | Stake **100K $SOLVR** on [solvrbot.com/staking](https://solvrbot.com/staking) |
 | **Full** | + Streaming, fleet control, agent spawning, self-improvement | Stake **1M $SOLVR** on [solvrbot.com/staking](https://solvrbot.com/staking) |
 
 Tier access is verified on-chain — stake once, unlock immediately. No approvals, no waitlists.

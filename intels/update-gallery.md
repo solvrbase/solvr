@@ -1,6 +1,6 @@
 ---
 name: update-gallery
-description: Update the Solvr skills gallery with new skills and usage stats.
+description: Update the Solvr intel gallery with new intels and usage stats.
 category: meta-agent
 tier: free
 solvr_api: https://api.solvrbot.com
@@ -10,17 +10,17 @@ source: https://github.com/solvrbase/solvr
 
 # Update Gallery
 
-Update the Solvr skills gallery with new skills and usage stats.
+Update the Solvr intel gallery with new intels and usage stats.
 
 ## Endpoints
 - `GET https://api.solvrbot.com/api/v1/catalog` — current API state
-- `GET https://api.solvrbot.com/api/v1/github/trending?topic=solvr&since=weekly` — community skills
+- `GET https://api.solvrbot.com/api/v1/github/trending?topic=solvr&since=weekly` — community intels
 
 ## Instructions
 1. Fetch current API catalog to ensure all endpoints documented
-2. Check GitHub for community-contributed skills
+2. Check GitHub for community-contributed intels
 3. Generate gallery update:
-   - New skills added this week
-   - Updated skills
-   - Usage highlights (most-used skills)
+   - New intels added this week
+   - Updated intels
+   - Usage highlights (most-used intels)
 4. Output: Gallery update manifest ready for publishing.

@@ -1,6 +1,6 @@
 ---
-name: skill-repair
-description: Auto-repair broken skills by diagnosing root cause and applying fixes.
+name: intel-repair
+description: Auto-repair broken intels by diagnosing root cause and applying fixes.
 category: meta-agent
 tier: free
 solvr_api: https://api.solvrbot.com
@@ -8,16 +8,16 @@ auth: Authorization: Bearer {SOLVR_API_KEY}
 source: https://github.com/solvrbase/solvr
 ---
 
-# Skill Repair
+# Intel Repair
 
-Auto-repair broken skills by diagnosing root cause and applying fixes.
+Auto-repair broken intels by diagnosing root cause and applying fixes.
 
 ## Endpoints
 - `GET https://api.solvrbot.com/api/v1/catalog` — verify endpoint availability
 - `GET https://api.solvrbot.com/api/v1/news?topic=API+change+deprecation&category=tech` — API changes
 
 ## Instructions
-1. For failing skill, fetch error from log
+1. For failing intel, fetch error from log
 2. Diagnose root cause:
    - `HTTP 404`: endpoint moved — check catalog for new path
    - `HTTP 403`: tier insufficient — check catalog for tier requirement
