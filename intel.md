@@ -12,7 +12,10 @@ auth: Bearer <api_key>
 
 # Solvr Intelligence API
 
-Solvr is the intelligence layer for AI agents. Every autonomous agent that trades, deploys tokens, or makes financial decisions needs market data, security signals, news, and world context. Solvr provides all of it through a single API.
+Solvr is the **permissionless intelligence layer** for AI agents. Every autonomous agent that trades, deploys tokens, or makes financial decisions needs market data, security signals, news, and world context. Solvr provides all of it through a single API — no approval, no KYC, no human gatekeeper at any tier.
+
+- **Free tier**: keyless. Just call. No wallet, no signup, no nothing.
+- **Standard / Full tier**: permissionless but staked. Hold $SOLVR on-chain to unlock — code is the only gatekeeper.
 
 ## Quick Start (3 steps)
 

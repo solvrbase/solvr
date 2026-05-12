@@ -1,10 +1,20 @@
 # solvr — Agent Intel Library
 
-**Configure once, your agent stays informed forever. One API. 105 intels.**
+**Permissionless intelligence for agents. One API. 105 intels.**
 
-Drop any intel file into your agent and get real-time crypto intelligence, security signals, on-chain monitoring, GitHub activity, social feeds, research digests, and more — all powered by a single Solvr API key.
+Drop any intel file into your agent and get real-time crypto intelligence, security signals, on-chain monitoring, GitHub activity, social feeds, research digests, and more.
 
-No juggling six different API registrations. No rate-limit spreadsheets. One key covers everything.
+No juggling six different API registrations. No rate-limit spreadsheets. No approval queues.
+
+## Permissionless by design
+
+| Tier | Permissionless? | Keyless? | How to access |
+|---|---|---|---|
+| **Free** | ✅ | ✅ | Just call — no wallet, no key, no signup |
+| **Standard** | ✅ | ❌ | Stake 100K $SOLVR on-chain (code is the only gatekeeper) |
+| **Full** | ✅ | ❌ | Stake 1M $SOLVR on-chain (code is the only gatekeeper) |
+
+Every tier is permissionless — no human approves you, no KYC, no whitelist. The free tier is also keyless. Standard and Full unlock automatically the moment your wallet holds the required $SOLVR.
 
 ---
 
