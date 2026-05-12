@@ -1,67 +1,28 @@
-# solvr — Agent Intel Library
+# solvr
 
 ```
-╭─────────────────────────────────────────────────────────────╮
-│                                                             │
-│   105 INTELS  ·  ONE API  ·  PERMISSIONLESS                 │
-│                                                             │
-│   crypto · news · on-chain · dev · social · world data      │
-│                                                             │
-╰─────────────────────────────────────────────────────────────╯
+   solvr
+   ─────
+   105 INTELS · ONE API · PERMISSIONLESS
 ```
 
-**Permissionless intelligence for agents. One API. 105 intels.**
+**The permissionless intelligence layer for AI agents.**
 
-Drop any intel file into your agent and get real-time crypto intelligence, security signals, on-chain monitoring, GitHub activity, social feeds, research digests, and more.
+Real-time news, onchain data, token security, technical analysis, dev signals, social feeds, prediction markets, macro indicators. 105 prebuilt intel modules. One API. No KYC, no signup approvals, no account gatekeepers.
 
-No juggling six different API registrations. No rate-limit spreadsheets. No approval queues.
-
----
-
-## Where Solvr fits in the agent stack
-
-Solvr is the **intelligence layer** — the data, signals, and context an agent reads from. It is not a runtime, not an LLM, and not a host. Agents running on AEON, Hermes, OpenClaw, Bankr, Claude Code, or anything else call Solvr for the world model.
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│  LLM           OpenAI · Anthropic · Venice · Bankr LLM       │
-│  Runtime       AEON · Claude Code · OpenClaw · Hermes        │
-│  Intelligence  ▶ Solvr ◀  (where the agent learns about      │
-│                            the world — news, on-chain,        │
-│                            markets, dev, social, research)    │
-│  Chain         Base · $SOLVR for tier access                  │
-└──────────────────────────────────────────────────────────────┘
-```
-
----
-
-## Why solvr? — vs other agent infra
-
-|  | **Solvr** | AEON | Hermes OS | OpenClaw | OpenAI Platform | Perplexity API |
-|---|---|---|---|---|---|---|
-| **What it is** | Intelligence layer (data API + 105 intels) | Autonomous agent framework | AI agent hosting infra | Agent platform / runtime | Centralized LLM | Centralized search API |
-| **Permissionless** | ✅ All tiers | ✅ (self-hosted, no provider) | ❌ Centralized service | Partial (wallet-based) | ❌ Account + KYC | ❌ Account + KYC |
-| **Free tier keyless** | ✅ Just call | ❌ BYO LLM keys | ❌ Account needed | ❌ Account needed | ❌ Paid only | Limited (account required) |
-| **Open source** | ✅ MIT | ✅ MIT | ❌ | Partial | ❌ | ❌ |
-| **Multi-source intel** | ✅ 105 intels, one API | ❌ BYO data | ❌ BYO data | ❌ BYO data | ❌ LLM only | News only |
-| **Agent-native files** | ✅ `intel.md` | ✅ `SKILL.md` | ❌ | ✅ skill format | ❌ | ❌ |
-| **On-chain access** | ✅ Hold $SOLVR on Base | ❌ | ❌ | Wallet + token | ❌ | ❌ |
-| **Pay model** | Hold $SOLVR (no per-call) | Free + your LLM cost | Subscription | Token-based | Pay-per-token | Pay-per-query |
-| **Identity / auth** | Wallet sign (no email) | None (BYO) | Email account | Wallet | Email + KYC | Email |
-
-**The unique slot Solvr occupies**: the **only permissionless, keyless-free, multi-source intelligence API** in the stack. AEON gives you the orchestration, Hermes gives you hosting, OpenAI gives you the brain — Solvr gives the agent the world to operate on. Most centralized providers (Perplexity, NewsAPI, Etherscan, CoinGecko) cover one slice each and gate everything behind accounts; Solvr aggregates all of them and exposes them permissionlessly.
+The free tier is fully keyless. Just call. Standard and full tiers unlock automatically when your wallet holds $SOLVR on Base.
 
 ---
 
 ## Permissionless by design
 
-| Tier | Permissionless? | Keyless? | How to access |
+| Tier | Permissionless | Keyless | How to access |
 |---|---|---|---|
-| **Free** | ✅ | ✅ | Just call — no wallet, no key, no signup |
-| **Standard** | ✅ | ❌ | Hold 500M $SOLVR on-chain (code is the only gatekeeper) |
-| **Full** | ✅ | ❌ | Hold 1B $SOLVR on-chain (code is the only gatekeeper) |
+| **Free** | ✅ | ✅ | Just call. No wallet, no key, no signup. |
+| **Standard** | ✅ | ❌ | Hold 20M $SOLVR onchain. Code is the only gatekeeper. |
+| **Full** | ✅ | ❌ | Hold 1B $SOLVR onchain. Code is the only gatekeeper. |
 
-Every tier is permissionless — no human approves you, no KYC, no whitelist. The free tier is also keyless. Standard and Full unlock automatically the moment your wallet holds the required $SOLVR.
+Every tier is permissionless. No human approves you, no KYC, no whitelist. The free tier is also keyless. Standard and Full unlock automatically the moment your wallet holds the required $SOLVR.
 
 ---
 
@@ -83,7 +44,7 @@ All intel files are in [`intels/`](./intels/). All MIT licensed.
 
 ## Quick Start
 
-Free tier endpoints are **keyless** — no registration, no wallet, no approval. Just call and go.
+Free tier endpoints are **keyless**. No registration, no wallet, no approval. Just call.
 
 ### 1. Use free endpoints immediately (no key)
 
@@ -113,7 +74,7 @@ tokens = requests.get(f"{BASE}/api/v1/dex/search", params={"q": "SOLVR"}).json()
 
 ### 2. Unlock standard + full tier (stake $SOLVR)
 
-Standard and full tier endpoints (token intelligence, security scans, TA) require staking $SOLVR on-chain.
+Standard and full tier endpoints (token intelligence, security scans, TA) require staking $SOLVR onchain.
 
 ```python
 import time, requests
@@ -131,7 +92,7 @@ resp = requests.post(f"{BASE}/api/v1/agent/register", json={
 })
 api_key = resp.json()["api_key"]  # store securely
 
-# Then stake at solvrbot.com/staking — tier activates immediately on-chain
+# Then stake at solvrbot.com/staking — tier activates immediately onchain
 ```
 
 ### 3. Use an intel file directly
@@ -147,7 +108,7 @@ cp intels/token-report.md your-agent/intels/
 
 ## Examples by tier
 
-### Free tier — keyless one-liners
+### Free tier: keyless one-liners
 
 No auth, no signup. Works from `curl`, any agent, any browser. IP rate-limited.
 
@@ -165,9 +126,9 @@ curl "https://api.solvrbot.com/api/v1/dex/trending"
 curl "https://api.solvrbot.com/api/v1/polymarket?topic=election"
 ```
 
-### Standard tier — pre-trade defense pattern (the Grok-attack defense)
+### Standard tier: pre-trade defense pattern
 
-Before any financial action, run the security guard. This is the same pattern that would have caught the prompt-injection attack that drained $174K from Grok's wallet. Requires 500M $SOLVR held in your registered wallet.
+Before any financial action, run the security guard. This is the same pattern that would have caught the prompt-injection attack that drained $174K from Grok's wallet. Requires 20M $SOLVR held in your registered wallet.
 
 ```python
 import requests
@@ -196,7 +157,7 @@ def safe_to_send(to_address: str, ca: str) -> bool:
 # Agent calls this BEFORE any tx — no security check, no signature.
 ```
 
-### Full tier — autonomous fleet + self-improvement
+### Full tier: autonomous fleet and self-improvement
 
 Hold 1B $SOLVR to unlock the full intel set: streaming feeds, agent spawning, fleet orchestration, and the self-healing loop.
 
@@ -229,7 +190,7 @@ requests.post(
 | [token-alert](./intels/token-alert.md) | Standard | Trigger alert when token hits price/RSI/risk threshold |
 | [token-movers](./intels/token-movers.md) | Free | Top gainers and losers on Base in the last 24h |
 | [token-pick](./intels/token-pick.md) | Standard | AI-scored token pick from trending list with risk filter |
-| [on-chain-monitor](./intels/on-chain-monitor.md) | Standard | Watch a wallet or contract for on-chain activity |
+| [onchain-monitor](./intels/onchain-monitor.md) | Standard | Watch a wallet or contract for onchain activity |
 | [defi-monitor](./intels/defi-monitor.md) | Standard | Monitor a DeFi position for liquidation risk or yield change |
 | [defi-overview](./intels/defi-overview.md) | Free | TVL, top protocols, and chain rankings from DefiLlama |
 | [market-context-refresh](./intels/market-context-refresh.md) | Free | Hourly macro + crypto market context refresh |
@@ -371,7 +332,7 @@ requests.post(
 
 ## Core Intels
 
-9 foundational intels — Python client, security patterns, and integrations.
+9 foundational intels: Python client, security patterns, and integrations.
 
 | Intel | Description |
 |---|---|
@@ -391,11 +352,30 @@ requests.post(
 
 | Tier | What's included | How to unlock |
 |---|---|---|
-| **Free** | News, world data, DEX search, trending tokens, GitHub, Reddit, Farcaster, Polymarket | Free — wallet-sign to register |
-| **Standard** | + Token intel, security scan, TA, social proof, all 29 dev intels | Hold **500M $SOLVR** in your registered wallet on Base |
+| **Free** | News, world data, DEX search, trending tokens, GitHub, Reddit, Farcaster, Polymarket | Free. Keyless. |
+| **Standard** | + Token intel, security scan, TA, social proof, all 29 dev intels | Hold **20M $SOLVR** in your registered wallet on Base |
 | **Full** | + Streaming, fleet control, agent spawning, self-improvement | Hold **1B $SOLVR** in your registered wallet on Base |
 
-Tier access is verified on-chain via `eth_call balanceOf` every 10 minutes — no separate staking transaction, just hold $SOLVR. Unlock is instant.
+Tier access is verified onchain via `eth_call balanceOf` every 10 minutes. No separate staking transaction. Just hold $SOLVR. Unlock is instant.
+
+---
+
+## How Solvr compares to centralized intelligence
+
+The closest thing to Solvr in the legacy world is a Bloomberg Terminal seat: a single subscription that gives a professional access to news, market data, alerts, analytics, and signals. Solvr does that for AI agents, without the gatekeeping.
+
+|  | **Solvr** | OpenAI Platform | Anthropic API | Perplexity API | Bloomberg Terminal | CoinGecko Pro |
+|---|---|---|---|---|---|---|
+| **Type** | Intelligence API for agents | LLM inference | LLM inference | AI search / news | Enterprise intel terminal | Crypto market data |
+| **Access** | Permissionless. Free tier keyless. | KYC, billing, account | KYC, billing, account | Account + billing | Sales contact, contract | Account + billing |
+| **Open source** | MIT | Closed | Closed | Closed | Closed | Closed |
+| **Data breadth** | News, onchain, crypto markets, dev signals, social, macro, prediction markets | LLM only | LLM only | News + web search | Finance, news, equities | Crypto only |
+| **Onchain native** | Built for Base agents | No | No | No | Limited | Read-only crypto data |
+| **Cost model** | Hold $SOLVR (no per-call) | Pay-per-token | Pay-per-token | $20 + API fees | $24K per seat per year | $129+ per month |
+| **Agent-ready intel files** | 105 `intel.md` files | None | None | None | None | None |
+| **Identity** | Wallet signature | Email + KYC | Email + KYC | Email | Verified enterprise | Email |
+
+The unique slot: Solvr is the only multi-source intelligence layer where access is gated by code, not by a sales team or a payments wall. Centralized providers cover one slice each (LLM, news, or crypto) and put it behind account walls. Solvr aggregates all slices and exposes them through wallet-verified tiers.
 
 ---
 
@@ -423,7 +403,7 @@ graph LR
 | 5. Improve | [`self-improve`](./intels/self-improve.md) | Evolves prompts + configs based on rolling performance data |
 | Tracking | [`cost-report`](./intels/cost-report.md) · [`operator-scorecard`](./intels/operator-scorecard.md) | Weekly cost + quality dashboard |
 
-Compare to AEON's self-healing loop — same pattern, modular intels instead of bundled framework.
+Each step is a separate intel file, not a bundled framework. Mix and match the ones you need.
 
 ---
 
@@ -446,7 +426,7 @@ Solvr is plain HTTP under the hood, so anything that can `fetch` can call it. Th
 
 ### Bankr Cloud (x402)
 
-Solvr is registered as an x402-compatible agent on Bankr Cloud — agents using Bankr's CLI can discover and call Solvr endpoints with USDC micropayments instead of $SOLVR.
+Solvr is registered as an x402-compatible agent on Bankr Cloud. Agents using Bankr's CLI can discover and call Solvr endpoints with USDC micropayments instead of $SOLVR.
 
 ```
 https://x402.bankr.bot/0x3912949d6f89d7abefb7680eb2320e423c31df08/clerk-search
@@ -464,7 +444,7 @@ Solvr intels are running in production right now:
 | **Clerk** | Court records search agent (CourtListener + PACER) via x402 | [clerk.solvrlabs.ai](https://clerk.solvrlabs.ai) |
 | **HantaVirus Tracker** | Real-time hantavirus outbreak monitoring | [solvrbot.com/hantavirus](https://solvrbot.com/hantavirus) |
 | **UAP Disclosure Intel** | PURSAP filings + UAP/UFO disclosure feed | [solvrbot.com/ufo](https://solvrbot.com/ufo) |
-| **@solvrbot** | Telegram + X bot — full intelligence stack in chat | [@solvrbot](https://x.com/solvrbot) |
+| **@solvrbot** | Telegram + X bot with the full intelligence stack in chat | [@solvrbot](https://x.com/solvrbot) |
 | **$SOLVR Bankr Club Airdrop** | 384 wallets claimed 2M $SOLVR each via Solvr intel | [solvrbot.com/claim](https://solvrbot.com/claim) |
 
 ---
@@ -493,7 +473,7 @@ solvr/
     └── token_launch_monitor.py            ← Base RPC scanner with auto security scan
 ```
 
-Every `intels/*.md` is self-contained — frontmatter declares which endpoints it uses, body explains the workflow. No external dependencies between intels.
+Every `intels/*.md` is self-contained. Frontmatter declares which endpoints it uses, body explains the workflow. No external dependencies between intels.
 
 ---
 
@@ -513,4 +493,12 @@ Every `intels/*.md` is self-contained — frontmatter declares which endpoints i
 
 ---
 
-*Solvr — The Intelligence Layer for the Agent Economy*
+## Support the project
+
+`0x6DfB7BFA06e7c2B6c20C22c0afb44852C201eB07`
+
+Any token, any chain. Contributions go to intel research, infra, and keeping the free tier free.
+
+---
+
+*Solvr — The Permissionless Intelligence Layer for the Agent Economy*

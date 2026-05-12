@@ -96,7 +96,7 @@ class SolvrIntel:
         """Currently trending tokens across all chains."""
         return self._get("/api/v1/dex/trending")
 
-    # ── Standard tier (500M+ $SOLVR) ──────────────────────────────────────────
+    # ── Standard tier (20M+ $SOLVR) ───────────────────────────────────────────
 
     def token_intel(self, address: str) -> dict:
         """Unified token report — price, MC, FDV, liquidity, volume, security,

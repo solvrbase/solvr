@@ -76,11 +76,11 @@ Solvr checks your registered wallet's $SOLVR balance on Base to determine your t
 | Tier | $SOLVR held | Req/day | Req/hour | Endpoints |
 |---|---|---|---|---|
 | **Free** | 0 | 100 | 10 | News, world data, DEX search/trending |
-| **Standard** | 500,000,000+ | 10,000 | 1,000 | + Token intel, security scan, TA, DEX analytics |
+| **Standard** | 20,000,000+ | 10,000 | 1,000 | + Token intel, security scan, TA, DEX analytics |
 | **Full** | 1,000,000,000+ | Unlimited | 5,000 | + Full TA, future streaming/webhooks |
 
 **How to get $SOLVR on Base:**
-- Via Bankr: message `@bankrbot buy 500M SOLVR` (or use their app)
+- Via Bankr: message `@bankrbot buy 20M SOLVR` (or use their app)
 - Via ClawBank: fund wallet then swap on any Base DEX
 - Via Uniswap/Aerodrome on Base directly
 - Contract: `0x` — see https://solvrbot.com for current address
@@ -190,7 +190,7 @@ GET /api/v1/dex/trending
 
 ---
 
-### Standard Tier (500M+ $SOLVR)
+### Standard Tier (20M+ $SOLVR)
 
 #### GET /api/v1/intel/{ca}
 Unified token intelligence — single call returns everything about a token.
