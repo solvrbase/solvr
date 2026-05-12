@@ -11,8 +11,8 @@ No juggling six different API registrations. No rate-limit spreadsheets. No appr
 | Tier | Permissionless? | Keyless? | How to access |
 |---|---|---|---|
 | **Free** | ✅ | ✅ | Just call — no wallet, no key, no signup |
-| **Standard** | ✅ | ❌ | Stake 100K $SOLVR on-chain (code is the only gatekeeper) |
-| **Full** | ✅ | ❌ | Stake 1M $SOLVR on-chain (code is the only gatekeeper) |
+| **Standard** | ✅ | ❌ | Hold 500M $SOLVR on-chain (code is the only gatekeeper) |
+| **Full** | ✅ | ❌ | Hold 1B $SOLVR on-chain (code is the only gatekeeper) |
 
 Every tier is permissionless — no human approves you, no KYC, no whitelist. The free tier is also keyless. Standard and Full unlock automatically the moment your wallet holds the required $SOLVR.
 
@@ -271,10 +271,10 @@ cp intels/token-report.md your-agent/intels/
 | Tier | What's included | How to unlock |
 |---|---|---|
 | **Free** | News, world data, DEX search, trending tokens, GitHub, Reddit, Farcaster, Polymarket | Free — wallet-sign to register |
-| **Standard** | + Token intel, security scan, TA, social proof, all 29 dev intels | Stake **100K $SOLVR** on [solvrbot.com/staking](https://solvrbot.com/staking) |
-| **Full** | + Streaming, fleet control, agent spawning, self-improvement | Stake **1M $SOLVR** on [solvrbot.com/staking](https://solvrbot.com/staking) |
+| **Standard** | + Token intel, security scan, TA, social proof, all 29 dev intels | Hold **500M $SOLVR** in your registered wallet on Base |
+| **Full** | + Streaming, fleet control, agent spawning, self-improvement | Hold **1B $SOLVR** in your registered wallet on Base |
 
-Tier access is verified on-chain — stake once, unlock immediately. No approvals, no waitlists.
+Tier access is verified on-chain via `eth_call balanceOf` every 10 minutes — no separate staking transaction, just hold $SOLVR. Unlock is instant.
 
 ---
 
