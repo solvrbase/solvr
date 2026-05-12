@@ -489,7 +489,7 @@ Every `intels/*.md` is self-contained. Frontmatter declares which endpoints it u
 - API Docs: [solvrbot.com/api-docs](https://solvrbot.com/api-docs)
 - X: [@solvrbot](https://x.com/solvrbot)
 - Telegram: [t.me/+c4fAGSZwvu4zOTJl](https://t.me/+c4fAGSZwvu4zOTJl)
-- GitLawb: [gitlawb.com/z6Mkj7.../solvr](https://gitlawb.com)
+- GitLawb: [gitlawb.com/z6Mkj7.../solvr](https://gitlawb.com/z6Mkj7Wovs8876oRkFh1UMr46fEZkxcvpwz5MgpzfbtwxFKZ/solvr)
 
 ---
 
