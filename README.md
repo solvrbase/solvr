@@ -1,10 +1,57 @@
 # solvr — Agent Intel Library
 
+```
+╭─────────────────────────────────────────────────────────────╮
+│                                                             │
+│   105 INTELS  ·  ONE API  ·  PERMISSIONLESS                 │
+│                                                             │
+│   crypto · news · on-chain · dev · social · world data      │
+│                                                             │
+╰─────────────────────────────────────────────────────────────╯
+```
+
 **Permissionless intelligence for agents. One API. 105 intels.**
 
 Drop any intel file into your agent and get real-time crypto intelligence, security signals, on-chain monitoring, GitHub activity, social feeds, research digests, and more.
 
 No juggling six different API registrations. No rate-limit spreadsheets. No approval queues.
+
+---
+
+## Where Solvr fits in the agent stack
+
+Solvr is the **intelligence layer** — the data, signals, and context an agent reads from. It is not a runtime, not an LLM, and not a host. Agents running on AEON, Hermes, OpenClaw, Bankr, Claude Code, or anything else call Solvr for the world model.
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│  LLM           OpenAI · Anthropic · Venice · Bankr LLM       │
+│  Runtime       AEON · Claude Code · OpenClaw · Hermes        │
+│  Intelligence  ▶ Solvr ◀  (where the agent learns about      │
+│                            the world — news, on-chain,        │
+│                            markets, dev, social, research)    │
+│  Chain         Base · $SOLVR for tier access                  │
+└──────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## Why solvr? — vs other agent infra
+
+|  | **Solvr** | AEON | Hermes OS | OpenClaw | OpenAI Platform | Perplexity API |
+|---|---|---|---|---|---|---|
+| **What it is** | Intelligence layer (data API + 105 intels) | Autonomous agent framework | AI agent hosting infra | Agent platform / runtime | Centralized LLM | Centralized search API |
+| **Permissionless** | ✅ All tiers | ✅ (self-hosted, no provider) | ❌ Centralized service | Partial (wallet-based) | ❌ Account + KYC | ❌ Account + KYC |
+| **Free tier keyless** | ✅ Just call | ❌ BYO LLM keys | ❌ Account needed | ❌ Account needed | ❌ Paid only | Limited (account required) |
+| **Open source** | ✅ MIT | ✅ MIT | ❌ | Partial | ❌ | ❌ |
+| **Multi-source intel** | ✅ 105 intels, one API | ❌ BYO data | ❌ BYO data | ❌ BYO data | ❌ LLM only | News only |
+| **Agent-native files** | ✅ `intel.md` | ✅ `SKILL.md` | ❌ | ✅ skill format | ❌ | ❌ |
+| **On-chain access** | ✅ Hold $SOLVR on Base | ❌ | ❌ | Wallet + token | ❌ | ❌ |
+| **Pay model** | Hold $SOLVR (no per-call) | Free + your LLM cost | Subscription | Token-based | Pay-per-token | Pay-per-query |
+| **Identity / auth** | Wallet sign (no email) | None (BYO) | Email account | Wallet | Email + KYC | Email |
+
+**The unique slot Solvr occupies**: the **only permissionless, keyless-free, multi-source intelligence API** in the stack. AEON gives you the orchestration, Hermes gives you hosting, OpenAI gives you the brain — Solvr gives the agent the world to operate on. Most centralized providers (Perplexity, NewsAPI, Etherscan, CoinGecko) cover one slice each and gate everything behind accounts; Solvr aggregates all of them and exposes them permissionlessly.
+
+---
 
 ## Permissionless by design
 
@@ -94,6 +141,80 @@ Each `intels/*.md` file is a self-contained intel definition. Drop it into any a
 ```bash
 git clone https://github.com/solvrbase/solvr
 cp intels/token-report.md your-agent/intels/
+```
+
+---
+
+## Examples by tier
+
+### Free tier — keyless one-liners
+
+No auth, no signup. Works from `curl`, any agent, any browser. IP rate-limited.
+
+```bash
+# Real-time news on any topic (GDELT-backed, no key needed)
+curl "https://api.solvrbot.com/api/v1/news?topic=AI+regulation&limit=3"
+
+# Macro / world data (180+ countries, World Bank + FRED)
+curl "https://api.solvrbot.com/api/v1/worlddata?query=fed+rate"
+
+# DEX trending tokens on Base
+curl "https://api.solvrbot.com/api/v1/dex/trending"
+
+# Polymarket prediction markets
+curl "https://api.solvrbot.com/api/v1/polymarket?topic=election"
+```
+
+### Standard tier — pre-trade defense pattern (the Grok-attack defense)
+
+Before any financial action, run the security guard. This is the same pattern that would have caught the prompt-injection attack that drained $174K from Grok's wallet. Requires 500M $SOLVR held in your registered wallet.
+
+```python
+import requests
+
+HEADERS = {"Authorization": "Bearer solvr_your_key_here"}
+BASE = "https://api.solvrbot.com"
+
+def safe_to_send(to_address: str, ca: str) -> bool:
+    # 1. Scan the destination wallet + token
+    scan = requests.post(
+        f"{BASE}/api/v1/security/scan",
+        json={"address": ca, "chain": "base"},
+        headers=HEADERS,
+    ).json()
+    if scan["risk_score"] > 35 or scan["verdict"] != "LOW RISK":
+        return False
+
+    # 2. Confirm the CA was actually posted by the official account
+    verify = requests.post(
+        f"{BASE}/api/v1/security/verify-ca",
+        json={"ca": ca, "twitter_handle": "ProjectXYZ"},
+        headers=HEADERS,
+    ).json()
+    return verify["verdict"] in ("VERIFIED", "LIKELY_LEGIT")
+
+# Agent calls this BEFORE any tx — no security check, no signature.
+```
+
+### Full tier — autonomous fleet + self-improvement
+
+Hold 1B $SOLVR to unlock the full intel set: streaming feeds, agent spawning, fleet orchestration, and the self-healing loop.
+
+```python
+# Spawn a specialized monitoring agent with a curated intel set
+requests.post(
+    f"{BASE}/api/v1/fleet/spawn",
+    json={
+        "name": "narrative-scout",
+        "intels": ["narrative-tracker", "monitor-runners", "token-pick"],
+        "schedule": "*/15 * * * *",
+        "notify": "telegram",
+    },
+    headers=HEADERS,
+)
+
+# The spawned agent runs unattended, self-heals on broken intels,
+# and reports back via your chosen channel.
 ```
 
 ---
@@ -259,7 +380,7 @@ cp intels/token-report.md your-agent/intels/
 | [CA Social Proof Verifier](./intel.md) | Verify a token's official socials match its contract address |
 | [Market Brain](./examples/market_brain.py) | Full trading loop: news → macro → TA → buy/hold/sell |
 | [Token Launch Monitor](./examples/token_launch_monitor.py) | Real-time Base RPC scanner for new token launches |
-| [Token Intelligence](./intel.md) | x402-compatible: security + TA + analytics in one call |
+| [Token Intelligence](./intel.md) | Unified token intel: security + TA + analytics in one call |
 | [HantaVirus Tracker](./intels/agent-health.md) | Real-time hantavirus case counts and transmission risk |
 | [UAP Disclosure Intel](./intel.md) | PURSAP filings and UAP/UFO disclosure feed |
 | [Solvr Bot SDK](./solvr_intel.py) | Post, reply, read mentions on the Solvr social feed |
@@ -278,16 +399,107 @@ Tier access is verified on-chain via `eth_call balanceOf` every 10 minutes — n
 
 ---
 
-## Files
+## Self-healing loop
 
-| File | Description |
-|---|---|
-| `intel.md` | Bankr-compatible intel registration file |
-| `solvr_intel.py` | Python client for all Solvr Intelligence API endpoints |
-| `intels/` | 96 drop-in intel files — one per intel |
-| `examples/security_guard.py` | Pre-transfer security check — the Grok defense pattern |
-| `examples/market_brain.py` | Full trading intelligence loop |
-| `examples/token_launch_monitor.py` | Real-time token launch monitor with auto security scan |
+The 14 meta-agent intels form a closed loop that keeps a Solvr-powered agent running unattended. Drop in `heartbeat`, `intel-health`, `intel-evals`, `intel-repair`, and `self-improve` on cron and the agent diagnoses + patches itself when an intel breaks.
+
+```mermaid
+graph LR
+    A[heartbeat<br/>3× daily] --> B[intel-health<br/>endpoint + freshness]
+    B --> C[intel-evals<br/>quality score 1-5]
+    C --> D{score &lt; 3?}
+    D -->|yes| E[intel-repair<br/>diagnose + fix]
+    D -->|no| F[self-improve<br/>tune prompts + config]
+    E --> A
+    F --> A
+```
+
+| Step | Intel | What it does |
+|---|---|---|
+| 1. Detect | [`heartbeat`](./intels/heartbeat.md) | Periodic ping — confirms agent is alive and all required endpoints respond |
+| 2. Audit | [`intel-health`](./intels/intel-health.md) | Checks every installed intel for broken endpoints, stale configs, missing fields |
+| 3. Score | [`intel-evals`](./intels/intel-evals.md) | Runs assertion-based output quality tests, scores each intel 1–5 |
+| 4. Repair | [`intel-repair`](./intels/intel-repair.md) | Diagnoses root cause (404 / 403 / 429 / 5xx) and patches the intel |
+| 5. Improve | [`self-improve`](./intels/self-improve.md) | Evolves prompts + configs based on rolling performance data |
+| Tracking | [`cost-report`](./intels/cost-report.md) · [`operator-scorecard`](./intels/operator-scorecard.md) | Weekly cost + quality dashboard |
+
+Compare to AEON's self-healing loop — same pattern, modular intels instead of bundled framework.
+
+---
+
+## Integrations
+
+Solvr is plain HTTP under the hood, so anything that can `fetch` can call it. The intel format works with any agent runner that reads markdown skill/intel files.
+
+| Stack | How it integrates | Example |
+|---|---|---|
+| **Raw HTTP** | Any language, any client | `curl https://api.solvrbot.com/api/v1/news` |
+| **Python SDK** | `solvr_intel.py` — typed client for every endpoint | `intel.news("topic")`, `intel.security_scan("0x...")` |
+| **TypeScript / JS** | `fetch` + Bearer header | `fetch(url, { headers: { Authorization: "Bearer ..." } })` |
+| **AEON** | Drop intel files into `skills/` directory, AEON treats them as skills | `cp intels/token-report.md aeon/skills/` |
+| **Bankr** | `intel.md` registers your agent on Bankr Cloud (x402-compatible) | `@bankrbot install intel.md` |
+| **OpenClaw** | `intel.md` is OpenClaw-compatible — drop into the agent's intel directory | OpenClaw reads frontmatter + body directly |
+| **Claude Code / Claude Desktop** | Copy the intel.md content into the agent's system prompt or skills folder | Works with Claude's tool-use natively |
+| **LangChain / CrewAI / AutoGen** | Wrap any endpoint as a `Tool`; intel.md describes the tool signature | One-line tool definition per intel |
+| **MCP server** | _Planned_ — every intel exposed as an MCP tool | Coming Q2 |
+| **A2A protocol** | _Planned_ — Google A2A gateway | Coming Q2 |
+
+### Bankr Cloud (x402)
+
+Solvr is registered as an x402-compatible agent on Bankr Cloud — agents using Bankr's CLI can discover and call Solvr endpoints with USDC micropayments instead of $SOLVR.
+
+```
+https://x402.bankr.bot/0x3912949d6f89d7abefb7680eb2320e423c31df08/clerk-search
+```
+
+---
+
+## Real-world use
+
+Solvr intels are running in production right now:
+
+| Project | What it uses | Live at |
+|---|---|---|
+| **Atelier** | Image gen, image edit, token security, SEO report, legal risk (5 services) | [atelierai.xyz/agents/solvr-ai](https://atelierai.xyz/agents/solvr-ai) |
+| **Clerk** | Court records search agent (CourtListener + PACER) via x402 | [clerk.solvrlabs.ai](https://clerk.solvrlabs.ai) |
+| **HantaVirus Tracker** | Real-time hantavirus outbreak monitoring | [solvrbot.com/hantavirus](https://solvrbot.com/hantavirus) |
+| **UAP Disclosure Intel** | PURSAP filings + UAP/UFO disclosure feed | [solvrbot.com/ufo](https://solvrbot.com/ufo) |
+| **@solvrbot** | Telegram + X bot — full intelligence stack in chat | [@solvrbot](https://x.com/solvrbot) |
+| **$SOLVR Bankr Club Airdrop** | 384 wallets claimed 2M $SOLVR each via Solvr intel | [solvrbot.com/claim](https://solvrbot.com/claim) |
+
+---
+
+## Project structure
+
+```
+solvr/
+├── README.md                              ← you are here
+├── LICENSE                                ← MIT
+├── intel.md                               ← Bankr-compatible registration (the "manifest")
+├── solvr_intel.py                         ← Python client for every endpoint
+│
+├── intels/                                ← 96 drop-in intel.md files (one per intel)
+│   ├── token-report.md                    ← Crypto & Markets (16 files)
+│   ├── digest.md                          ← Research & Content (18 files)
+│   ├── pr-review.md                       ← Dev & Code (29 files)
+│   ├── write-tweet.md                     ← Social & Writing (7 files)
+│   ├── morning-brief.md                   ← Productivity (12 files)
+│   ├── intel-health.md                    ← Meta-Agent (14 files)
+│   └── ... (96 total — see categories above)
+│
+└── examples/                              ← Reference implementations
+    ├── security_guard.py                  ← Pre-transfer defense (Grok-attack pattern)
+    ├── market_brain.py                    ← Full trading loop: news → macro → TA → decision
+    └── token_launch_monitor.py            ← Base RPC scanner with auto security scan
+```
+
+Every `intels/*.md` is self-contained — frontmatter declares which endpoints it uses, body explains the workflow. No external dependencies between intels.
+
+---
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=solvrbase/solvr&type=Date)](https://star-history.com/#solvrbase/solvr&Date)
 
 ---
 
