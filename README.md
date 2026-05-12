@@ -142,16 +142,16 @@ cp intels/token-report.md your-agent/intels/
 | [pr-review](./intels/pr-review.md) | Standard | AI code review summary for any GitHub PR |
 | [code-health](./intels/code-health.md) | Standard | Repo health score: test coverage, issue velocity, stale branches |
 | [vuln-scanner](./intels/vuln-scanner.md) | Standard | Scan a repo for known vulnerabilities in dependencies |
-| [skill-security-scan](./intels/skill-security-scan.md) | Standard | Security audit of a SKILL.md file before deployment |
+| [skill-security-scan](./intels/skill-security-scan.md) | Standard | Security audit of an intel.md file before deployment |
 | [changelog](./intels/changelog.md) | Free | Auto-generate changelog from GitHub commits |
 | [auto-merge](./intels/auto-merge.md) | Standard | Auto-merge approved PRs matching safety criteria |
 | [auto-workflow](./intels/auto-workflow.md) | Standard | Trigger GitHub Actions workflow and report result |
 | [autoresearch](./intels/autoresearch.md) | Standard | Automated research loop: search → synthesize → output |
-| [create-skill](./intels/create-skill.md) | Standard | Generate a new SKILL.md from a natural language description |
+| [create-skill](./intels/create-skill.md) | Standard | Generate a new intel.md from a natural language description |
 | [deploy-prototype](./intels/deploy-prototype.md) | Standard | Deploy a code prototype to a staging environment |
 | [external-feature](./intels/external-feature.md) | Standard | Research and spec an external API feature for your codebase |
 | [fleet-control](./intels/fleet-control.md) | Full | Orchestrate a fleet of agents across tasks |
-| [fork-fleet](./intels/fork-fleet.md) | Standard | Fork a skill set and deploy to multiple agent instances |
+| [fork-fleet](./intels/fork-fleet.md) | Standard | Fork an intel set and deploy to multiple agent instances |
 | [issue-triage](./intels/issue-triage.md) | Free | Auto-triage GitHub issues by priority and category |
 | [project-lens](./intels/project-lens.md) | Standard | High-level view of a project: health, velocity, blockers |
 | [push-recap](./intels/push-recap.md) | Free | Summary of recent commits pushed to a repo |
@@ -159,8 +159,8 @@ cp intels/token-report.md your-agent/intels/
 | [repo-article](./intels/repo-article.md) | Standard | Generate a blog post or announcement from a repo |
 | [repo-pulse](./intels/repo-pulse.md) | Free | Weekly repository activity pulse: stars, forks, contributors |
 | [repo-scanner](./intels/repo-scanner.md) | Standard | Deep scan a repository for quality and security signals |
-| [search-skill](./intels/search-skill.md) | Free | Search the Solvr skill library for relevant skills |
-| [spawn-instance](./intels/spawn-instance.md) | Full | Spawn a new agent instance with a given skill set |
+| [search-skill](./intels/search-skill.md) | Free | Search the Solvr intel library for relevant intels |
+| [spawn-instance](./intels/spawn-instance.md) | Full | Spawn a new agent instance with a given intel set |
 | [vercel-projects](./intels/vercel-projects.md) | Free | List and monitor Vercel deployments and build status |
 | [workflow-security-audit](./intels/workflow-security-audit.md) | Standard | Audit GitHub Actions workflows for security misconfigurations |
 | [dependency-audit](./intels/dependency-audit.md) | Standard | Audit npm/pip/cargo dependencies for outdated or vulnerable packages |
@@ -214,15 +214,15 @@ cp intels/token-report.md your-agent/intels/
 | [heartbeat](./intels/heartbeat.md) | Free | Periodic heartbeat check — confirm agent is alive and healthy |
 | [reflect](./intels/reflect.md) | Standard | Agent self-reflection: review last N actions, improve behavior |
 | [rss-feed](./intels/rss-feed.md) | Free | Generate and publish an RSS feed from agent output |
-| [self-improve](./intels/self-improve.md) | Full | Autonomous skill improvement from performance data |
-| [skill-evals](./intels/skill-evals.md) | Standard | Run evals on a skill set and score output quality |
-| [skill-health](./intels/skill-health.md) | Free | Check all installed skills for broken endpoints or stale configs |
-| [skill-leaderboard](./intels/skill-leaderboard.md) | Free | Rank installed skills by usage and output quality |
-| [skill-repair](./intels/skill-repair.md) | Standard | Auto-repair a broken skill by testing and updating its config |
-| [skill-update-check](./intels/skill-update-check.md) | Free | Check for newer versions of installed skills |
+| [self-improve](./intels/self-improve.md) | Full | Autonomous intel improvement from performance data |
+| [skill-evals](./intels/skill-evals.md) | Standard | Run evals on an intel set and score output quality |
+| [skill-health](./intels/skill-health.md) | Free | Check all installed intels for broken endpoints or stale configs |
+| [skill-leaderboard](./intels/skill-leaderboard.md) | Free | Rank installed intels by usage and output quality |
+| [skill-repair](./intels/skill-repair.md) | Standard | Auto-repair a broken intel by testing and updating its config |
+| [skill-update-check](./intels/skill-update-check.md) | Free | Check for newer versions of installed intels |
 | [update-gallery](./intels/update-gallery.md) | Free | Publish updated skill output to a gallery endpoint |
 | [operator-scorecard](./intels/operator-scorecard.md) | Standard | Weekly operator scorecard: output quality, cost, reliability |
-| [contributor-spotlight](./intels/contributor-spotlight.md) | Free | Highlight top contributors to the skill ecosystem |
+| [contributor-spotlight](./intels/contributor-spotlight.md) | Free | Highlight top contributors to the intel ecosystem |
 | [agent-health](./intels/agent-health.md) | Standard | Full agent health report: errors, latency, cost, coverage |
 
 ---
@@ -261,7 +261,7 @@ cp intels/token-report.md your-agent/intels/
 |---|---|
 | `skill.md` | Bankr-compatible intel registration file |
 | `solvr_intel.py` | Python client for all Solvr Intelligence API endpoints |
-| `intels/` | 91 drop-in intel files — one per intel |
+| `intels/` | 96 drop-in intel files — one per intel |
 | `examples/security_guard.py` | Pre-transfer security check — the Grok defense pattern |
 | `examples/market_brain.py` | Full trading intelligence loop |
 | `examples/token_launch_monitor.py` | Real-time token launch monitor with auto security scan |
